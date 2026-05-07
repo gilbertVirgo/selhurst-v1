@@ -34,8 +34,8 @@ export default () => {
 				<div className="flex flex-col gap-3 items-center md:items-start text-center md:text-left">
 					<h3 className="text-2xl">Get in touch</h3>
 					<p>
-						<a href="mailto:hello@selhurstchurch.org">
-							hello@selhurstchurch.org
+						<a href="mailto:selhurstpastor@gmail.com">
+							selhurstpastor@gmail.com
 						</a>
 					</p>
 				</div>
