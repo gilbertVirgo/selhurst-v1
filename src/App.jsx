@@ -1,4 +1,6 @@
 import Button from "./components/Button";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
 import Hero from "./slices/Hero";
 import MapEmbed from "./slices/MapEmbed";
 import SplitContentBlock from "./slices/SplitContentBlock";
@@ -7,6 +9,7 @@ import { useState } from "react";
 function App() {
 	return (
 		<>
+			<Nav />
 			<Hero
 				title="Welcome to Selhurst Church"
 				body={
@@ -29,7 +32,8 @@ function App() {
 						</Button>
 					</>
 				}
-				videoURL="/assets/reel.mp4"
+				landscapeVideoURL="/assets/reel--landscape.mp4"
+				portraitVideoURL="/assets/reel--portrait.mp4"
 			/>
 			<MapEmbed
 				id="find-us"
@@ -45,6 +49,7 @@ function App() {
 			/>
 			<div className="flex flex-col gap-24 py-24">
 				<SplitContentBlock
+					id="watch-online"
 					title="Watch online"
 					body={
 						<p>
@@ -54,6 +59,7 @@ function App() {
 					}
 					buttons={
 						<Button
+							size="sm"
 							external
 							href="https://www.youtube.com/@selhurstevangelicalchurchl3080"
 						>
@@ -64,17 +70,20 @@ function App() {
 					mask={1}
 				/>
 				<SplitContentBlock
+					id="get-in-touch"
 					title="Get in touch"
 					body={<p>We&apos;d love to hear from you.</p>}
 					buttons={
 						<>
 							<Button
+								size="sm"
 								external
 								href="mailto:selhurstpastor@gmail.com"
 							>
 								Send us an email
 							</Button>
 							<Button
+								size="sm"
 								external
 								href="sms:+447769700717"
 								theme="light"
@@ -88,6 +97,7 @@ function App() {
 					imageOnRight
 				/>
 			</div>
+			<Footer />
 		</>
 	);
 }

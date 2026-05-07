@@ -2,29 +2,73 @@
 @import "tailwindcss";
 
 @theme {
-    --color-dark: #231722;
-    --color-secondary: #9ea3a8;
-    --color-light: #fffef5;
-    --color-primary: #e8db7d;
+	--color-dark: #231722;
+	--color-secondary: #9ea3a8;
+	--color-light: #fffef5;
+	--color-primary: #e8db7d;
 
-    --font-title: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-    --font-body: "Bona Nova", ui-serif, Georgia, serif;
+	--font-title: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+	--font-body: "Bona Nova", ui-serif, Georgia, serif;
 
-    --font-sans: var(--font-title);
-    --font-serif: var(--font-body);
+	--font-sans: var(--font-title);
+	--font-serif: var(--font-body);
 }
 
 @layer base {
-    body {
-        @apply font-body bg-light;
-    }
+	body {
+		@apply font-body bg-light tracking-tight;
+	}
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @apply font-title font-semibold tracking-[-0.0175rem];
-    }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-title font-semibold tracking-[-0.0175rem];
+	}
+}
+
+@keyframes revealWord {
+	from {
+		clip-path: polygon(0 100%, 100% 66%, 100% 100%, 0 100%);
+	}
+	to {
+		clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+	}
+}
+
+@keyframes drawerReveal {
+	from {
+		clip-path: inset(0 0 calc(100% - 6rem) 0);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+@keyframes drawerClose {
+	from {
+		clip-path: inset(0 0 0 0);
+	}
+	to {
+		clip-path: inset(0 0 calc(100% - 6rem) 0);
+	}
+}
+
+@layer components {
+	.word-reveal {
+		@apply inline-block;
+		clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+		animation: revealWord 0.46s cubic-bezier(0.33, 0.66, 0.66, 1) forwards;
+	}
+
+	.drawer-reveal {
+		clip-path: inset(0 0 calc(100% - 6rem) 0);
+		animation: drawerReveal 0.23s cubic-bezier(0.33, 0.66, 0.66, 1) forwards;
+	}
+
+	.drawer-close {
+		animation: drawerClose 0.23s cubic-bezier(0.33, 0.66, 0.66, 1) forwards;
+	}
 }
