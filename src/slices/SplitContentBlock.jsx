@@ -24,8 +24,8 @@ export default ({
 		? "col-span-24 px-6 md:col-start-3 md:col-end-11 md:px-0 md:row-start-1"
 		: "col-span-24 px-6 md:col-start-15 md:col-end-23 md:px-0 md:row-start-1";
 	const imageClasses = imageOnRight
-		? "col-span-24 px-6 md:col-start-13 md:col-end-24 md:px-0 md:row-start-1"
-		: "col-span-24 px-6 md:col-start-2 md:col-end-13 md:px-0 md:row-start-1";
+		? "col-span-24 px-3 lg:px-0 md:col-start-13 md:col-end-24 md:px-0 md:row-start-1"
+		: "col-span-24 px-3 lg:px-0 md:col-start-2 md:col-end-13 md:px-0 md:row-start-1";
 	const maskURL = getMaskURL(mask);
 
 	let figure = (className) => (
